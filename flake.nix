@@ -34,7 +34,7 @@
       nixosConfigurations = {
         lap-greycanyon = mkSystem {
           hostname = "lap-greycanyon";
-          mainUser = "tristan";
+          username = "tristan";
         };
       };
     };

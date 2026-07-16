@@ -1,4 +1,4 @@
-{ config, pkgs, hostname, mainUser, ... }:
+{ config, pkgs, hostname, username, ... }:
 
 {
   imports = [
@@ -14,9 +14,9 @@
   networking.hostName = "${hostname}";
   networking.networkmanager.enable = true;
 
-  users.users."${mainUser}" = {
+  users.users."${username}" = {
     isNormalUser = true;
-    description = "${mainUser}";
+    description = "${username}";
     extraGroups = [ "networkmanager" "wheel" ];
   };
 

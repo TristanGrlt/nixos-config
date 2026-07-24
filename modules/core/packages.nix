@@ -16,11 +16,20 @@
     unzip
 
     ###
+    # system
+    ###
+    pciutils	# lspci
+    usbutils	# lsusb
+    hdparm	# disk performance
+    procs	# modern ps
+
+    ###
     # utils
     ###
     gnugrep	# find in files
     ripgrep	# faster grep
     jq		# JSON parser
+    gnused
 
     ###
     # networking

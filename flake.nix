@@ -13,10 +13,11 @@
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }:
     let
+      mylib = import ./lib { inherit (nixpkgs) lib; };
       mkSystem = { hostname, username }:
         nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          specialArgs = { inherit inputs hostname username; };
+          specialArgs = { inherit inputs hostname username mylib; };
 
           modules = [
             ./hosts/${hostname}/configuration.nix

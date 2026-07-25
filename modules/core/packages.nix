@@ -10,6 +10,12 @@
     nnn		# terminal file manager
 
     ###
+    # monitoring
+    ###
+    htop
+    btop
+
+    ###
     # archives
     ###
     zip

@@ -1,17 +1,21 @@
 { lib, ... }:
-{
-  scanPaths =
-    path:
-    builtins.map (f: (path + "/${f}")) (
-      builtins.attrNames (
-        lib.attrsets.filterAttrs (
-          path: _type:
-          (_type == "directory") # include directories
-          || (
-            (path != "default.nix") # ignore default.nix
-            && (lib.strings.hasSuffix ".nix" path) # include .nix files
-          )
-        ) (builtins.readDir path)
-      )
-    );
+
+rec {
+  scanPaths = path: recursive:
+    let
+      entries = builtins.readDir path;
+    in
+      builtins.concatLists (
+        lib.attrsets.mapAttrsToList (name: type:
+          let
+            fullPath = path + "/${name}";
+          in
+            if type == "regular" && name != "default.nix" && lib.strings.hasSuffix ".nix" name then
+              [ fullPath ]
+            else if type == "directory" && recursive then
+              scanPaths fullPath true
+            else
+              [ ]
+        ) entries
+      );
 }

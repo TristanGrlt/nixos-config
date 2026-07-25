@@ -26,7 +26,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { inherit inputs username; };
+              home-manager.extraSpecialArgs = { inherit inputs username mylib; };
               home-manager.users.${username} = import ./users/${username}/home.nix;
             }
           ];

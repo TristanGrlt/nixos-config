@@ -6,7 +6,8 @@
 
   imports = [
     ../../home/core/default.nix
-    ../../home/desktop/sway.nix 
+    ../../home/desktop/wayland/default.nix 
+    ../../home/desktop/wayland/sway/default.nix
   ];
 
   # starship - an customizable prompt for any shell

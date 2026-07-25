@@ -1,24 +1,5 @@
-{ config, pkgs, ... }:
+{ mylib, ... }:
 
 {
-  services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  services.xserver.xkb = {
-    layout = "fr";
-    variant = "";
-  };
-
-  services.printing.enable = true;
-
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-
-  programs.firefox.enable = true;
+  imports = mylib.scanPaths ./.;
 }

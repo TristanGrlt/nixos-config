@@ -8,6 +8,21 @@
       modifier = "Mod4";
       terminal = "alacritty";
       
+      startup = [
+        { command = "blueman-applet"; }
+      ];
+
+      input = {
+        "type:keyboard" = {
+          xkb_layout = "fr";
+        };
+
+        "type:touchpad" = {
+          tap = "enabled";
+          dwt = "enabled";
+        };
+      };
+      
       keybindings = lib.mkOptionDefault {
         "Mod4+Return" = "exec alacritty";
         "Mod4+Shift+q" = "kill";

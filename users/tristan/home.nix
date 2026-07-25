@@ -39,9 +39,14 @@
 
   programs.ssh = {
     enable = true;
-    addKeysToAgent = "yes";
-    matchBlocks."github.com" = {
-      identityFile = "~/.ssh/git_tristanGrlt";
+    # La nouvelle méthode centralise tout dans 'settings'
+    settings = {
+      "*" = {
+        AddKeysToAgent = "yes";
+      };
+      "github.com" = {
+        IdentityFile = "~/.ssh/git_tristanGrlt";
+      };
     };
   };
 

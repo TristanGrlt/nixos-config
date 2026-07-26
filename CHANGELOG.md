@@ -1,3 +1,9 @@
+## 0.3.0 (2026-07-26)
+
+### Feat
+
+- **zsh**: add zsh and a lot of plugins
+
 ## 0.2.0 (2026-07-26)
 
 ### Feat

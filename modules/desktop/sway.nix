@@ -5,6 +5,9 @@
   programs.sway.enable = true;
   hardware.graphics.enable = true;
 
+  # Enable lightness control without sudo
+  programs.light.enable = true;
+
   # Session launcher
   services.displayManager.sddm = {
     enable = true;

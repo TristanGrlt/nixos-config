@@ -17,7 +17,7 @@
   users.users."${username}" = {
     isNormalUser = true;
     description = "${username}";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel", "video" ];
   };
 
   system.stateVersion = "26.05";

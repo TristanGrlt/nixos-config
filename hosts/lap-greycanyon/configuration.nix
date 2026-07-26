@@ -14,10 +14,13 @@
   networking.hostName = "${hostname}";
   networking.networkmanager.enable = true;
 
+  programs.zsh.enable = true;
+
   users.users."${username}" = {
     isNormalUser = true;
     description = "${username}";
     extraGroups = [ "networkmanager" "wheel" "video" ];
+    shell = pkgs.zsh;
   };
 
   system.stateVersion = "26.05";

@@ -20,6 +20,7 @@
     settings = {
       env.TERM = "xterm-256color";
       font = {
+        normal.family = "SpaceMono Nerd Font";
         size = 11;
       };
       scrolling.multiplier = 5;

@@ -3,8 +3,6 @@
 {
   programs.git = {
     enable = true;
-    userName = "Tristan";
-    userEmail = "tristan@example.com"; # Email à configurer
     
     aliases = {
       st = "status";

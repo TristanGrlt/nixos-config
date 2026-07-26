@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 
 {
   wayland.windowManager.sway.config.keybindings = lib.mkOptionDefault {

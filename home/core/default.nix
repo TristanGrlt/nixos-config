@@ -2,7 +2,9 @@
 
 {
   home.packages = with pkgs; [
-    commitizen
+    (commitizen.overridePythonAttrs (old: {
+      doCheck = false;
+    }))
   ];
 
   programs.firefox.enable = true;

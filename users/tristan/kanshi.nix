@@ -22,12 +22,11 @@
           outputs = [
             { 
               criteria = "eDP-1"; 
-              position = "0,0"; 
+              position = "375,0";
               scale = 1.10;
             }
             { 
               criteria = "Dell Inc. DELL U2424H HNJJL04"; 
-              position = "375,0";
               status = "enable";
               scale = 0.90;
               mode = "1920x1080@120Hz";

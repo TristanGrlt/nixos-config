@@ -30,14 +30,14 @@ in
       focusedInactive = {
         background = "${c.bg_alt}";
         border = "${c.bg}";
-        childBorder = "${c.accent}";
+        childBorder = "${c.bg_alt}";
         indicator = "${c.bg_alt}";
         text = "${c.fg}";
       };
       unfocused = {
         background = "${c.bg}";
         border = "${c.bg}";
-        childBorder = "${c.accent}";
+        childBorder = "${c.bg}";
         indicator = "${c.bg_alt}";
         text = "${c.fg}";
       };
@@ -46,7 +46,7 @@ in
         border = "${c.red}";
         childBorder = "${c.red}";
         indicator = "${c.red}";
-        text = "${c.white}";
+        text = "${c.bg}";
       };
     };
 

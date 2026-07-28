@@ -1,32 +1,24 @@
 { pkgs, ... }:
 
 {
-  # UI style config
-  programs.swaylock = {
-    enable = true;
-    settings = {
-      color = "000000";
-      show-failed-attempts = true;
-      indicator-caps-lock = true;
-    };
-  };
+  programs.hyprlock.enable = true;
 
   # Auto activation config
   services.swayidle = {
     enable = true;
     
     events = [
-      { event = "before-sleep"; command = "${pkgs.swaylock}/bin/swaylock -f -c 000000"; }
-      { event = "lock"; command = "${pkgs.swaylock}/bin/swaylock -f -c 000000"; }
+      { event = "before-sleep"; command = "${pkgs.hyprlock}/bin/hyprlock"; }
+      { event = "lock"; command = "${pkgs.hyprlock}/bin/hyprlock"; }
     ];
     
     timeouts = [
       { 
-        timeout = 300; # 5 mins 
-        command = "${pkgs.swaylock}/bin/swaylock -f -c 000000"; 
+        timeout = 300; 
+        command = "${pkgs.hyprlock}/bin/hyprlock"; 
       }
       { 
-        timeout = 600; # 10 mins 
+        timeout = 600; 
         command = "${pkgs.sway}/bin/swaymsg 'output * dpms off'"; 
         resumeCommand = "${pkgs.sway}/bin/swaymsg 'output * dpms on'"; 
       }

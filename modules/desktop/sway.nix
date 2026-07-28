@@ -2,7 +2,11 @@
 
 {
   # Sway window manager
-  programs.sway.enable = true;
+  programs.sway = {
+    enable = true;
+    package = pkgs.swayfx;
+  };
+
   hardware.graphics.enable = true;
 
   # Enable lightness control without sudo

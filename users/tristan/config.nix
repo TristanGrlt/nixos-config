@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   # starship - an customizable prompt for any shell
@@ -20,9 +20,10 @@
     settings = {
       env.TERM = "xterm-256color";
       font = {
-        normal.family = "SpaceMono Nerd Font";
-        size = 11;
+        normal.family = lib.mkForce "SpaceMono Nerd Font";
+        size = lib.mkForce 11;
       };
+
       scrolling.multiplier = 5;
       selection.save_to_clipboard = true;
     };

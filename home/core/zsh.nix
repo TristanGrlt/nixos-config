@@ -1,5 +1,8 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
+let
+  c = config.theme.colors;
+in
 {
   programs.zsh = {
     enable = true;
@@ -41,6 +44,21 @@
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
+    colors = {
+      bg = "${c.bg}";
+      "bg+" = "${c.bg_alt}";
+      fg = "${c.fg}";
+      "fg+" = "${c.fg}";
+      hl = "${c.accent}";
+      "hl+" = "${c.accent}";
+      info = "${c.yellow}";
+      marker = "${c.green}";
+      prompt = "${c.accent}";
+      spinner = "${c.blue}";
+      pointer = "${c.accent}";
+      header = "${c.magenta}";
+      border = "${c.bg_alt}";
+    };
   };
 
   # Inteligent cd

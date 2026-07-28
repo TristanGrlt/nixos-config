@@ -8,5 +8,6 @@
     userName = "TristanGrlt";
     userEmail = "tristan.groult@gmail.com";
   };
+  theme.name = "main";
 
 }

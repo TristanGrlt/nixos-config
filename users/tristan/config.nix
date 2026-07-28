@@ -1,5 +1,8 @@
 { config, pkgs, lib, ... }:
 
+let
+  c = config.theme.colors;
+in
 {
   # starship - an customizable prompt for any shell
   programs.starship = {
@@ -26,6 +29,22 @@
 
       scrolling.multiplier = 5;
       selection.save_to_clipboard = true;
+      colors = {
+        primary = {
+          background = c.bg;
+          foreground = c.fg;
+        };
+        normal = {
+          black   = c.bg_alt;
+          red     = c.red;
+          green   = c.green;
+          yellow  = c.yellow;
+          blue    = c.blue;
+          magenta = c.magenta;
+          cyan    = c.cyan;
+          white   = c.white;
+        };
+      };
     };
   };
 

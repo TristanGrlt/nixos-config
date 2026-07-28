@@ -1,18 +1,53 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
+let
+  c = config.theme.colors;
+in
 {
   wayland.windowManager.sway = {
     enable = true;
+    
     config.modifier = "Mod4";
     config.terminal = "alacritty";
-
+    
     config.gaps = {
       inner = 0;
       outer = 0;
     };
-
+    
     config.window = {
-      border = 0;
+      border = 2; 
+    };
+
+    config.colors = {
+      focused = {
+        background = "${c.accent}";
+        border = "${c.bg}";
+        childBorder = "${c.accent}";
+        indicator = "${c.bg_alt}";
+        text = "${c.bg}";
+      };
+      focusedInactive = {
+        background = "${c.bg_alt}";
+        border = "${c.bg}";
+        childBorder = "${c.accent}";
+        indicator = "${c.bg_alt}";
+        text = "${c.fg}";
+      };
+      unfocused = {
+        background = "${c.bg}";
+        border = "${c.bg}";
+        childBorder = "${c.accent}";
+        indicator = "${c.bg_alt}";
+        text = "${c.fg}";
+      };
+      urgent = {
+        background = "${c.red}";
+        border = "${c.red}";
+        childBorder = "${c.red}";
+        indicator = "${c.red}";
+        text = "${c.white}";
+      };
     };
 
     config.startup = [

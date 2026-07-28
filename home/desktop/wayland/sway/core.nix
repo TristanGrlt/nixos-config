@@ -19,6 +19,10 @@ in
       border = 2; 
     };
 
+    config.bars = [
+      { command = "waybar"; }
+    ];
+
     config.colors = {
       focused = {
         background = "${c.accent}";

@@ -39,7 +39,7 @@ in
 
         "sway/workspaces" = {
           disable-scroll = true;
-          all-outputs = true;
+          all-outputs = false;
           format = "{name}";
         };
 

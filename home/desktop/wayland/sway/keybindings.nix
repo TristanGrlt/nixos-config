@@ -23,5 +23,29 @@
     # Light control (SwayOSD)
     "XF86MonBrightnessUp" = "exec swayosd-client --brightness raise";
     "XF86MonBrightnessDown" = "exec swayosd-client --brightness lower";
+
+     # Workspaces
+     "Mod4+ampersand" = "workspace number 1";
+     "Mod4+eacute" = "workspace number 2";
+     "Mod4+quotedbl" = "workspace number 3";
+     "Mod4+apostrophe" = "workspace number 4";
+     "Mod4+parenleft" = "workspace number 5";
+     "Mod4+minus" = "workspace number 6";
+     "Mod4+egrave" = "workspace number 7";
+     "Mod4+underscore" = "workspace number 8";
+     "Mod4+ccedilla" = "workspace number 9";
+     "Mod4+agrave" = "workspace number 10";
+ 
+     # Move workspaces
+     "Mod4+Shift+ampersand" = "move container to workspace number 1";
+     "Mod4+Shift+eacute" = "move container to workspace number 2";
+     "Mod4+Shift+quotedbl" = "move container to workspace number 3";
+     "Mod4+Shift+apostrophe" = "move container to workspace number 4";
+     "Mod4+Shift+parenleft" = "move container to workspace number 5";
+     "Mod4+Shift+minus" = "move container to workspace number 6";
+     "Mod4+Shift+egrave" = "move container to workspace number 7";
+     "Mod4+Shift+underscore" = "move container to workspace number 8";
+     "Mod4+Shift+ccedilla" = "move container to workspace number 9";
+     "Mod4+Shift+agrave" = "move container to workspace number 10";
   };
 }

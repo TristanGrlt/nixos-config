@@ -2,12 +2,11 @@
 
 let
   c = config.theme.colors;
+  f = config.theme.fonts;
 in
 {
-  # starship - an customizable prompt for any shell
   programs.starship = {
     enable = true;
-    # custom settings
     settings = {
       add_newline = false;
       aws.disabled = true;
@@ -16,17 +15,14 @@ in
     };
   };
 
-  # alacritty - a cross-platform, GPU-accelerated terminal emulator
   programs.alacritty = {
     enable = true;
-    # custom settings
     settings = {
       env.TERM = "xterm-256color";
       font = {
-        normal.family = lib.mkForce "SpaceMono Nerd Font";
+        normal.family = lib.mkForce f.monospace;
         size = lib.mkForce 11;
       };
-
       scrolling.multiplier = 5;
       selection.save_to_clipboard = true;
       colors = {

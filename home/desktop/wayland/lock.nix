@@ -2,7 +2,7 @@
 
 let
   c = config.theme.colors;
-  font_family = "SpaceMono Nerd Font";
+  f = config.theme.fonts;
 
   # Convert "#RRGGBB" to "rgb(RRGGBB)" for Hyprlock parser
   hex = color: "rgb(" + builtins.substring 1 6 color + ")";
@@ -64,7 +64,7 @@ in
           text = "$TIME";
           color = hex "#ffffff";
           font_size = 90;
-          font_family = "${font_family} Bold";
+          font_family = "${f.monospace} Bold";
           position = "0, 100";
           halign = "center";
           valign = "center";
@@ -74,7 +74,7 @@ in
           text = ''cmd[update:18000000] date +"<b>%A %-d %B</b>"'';
           color = hex "#ffffff";
           font_size = 20;
-          font_family = "${font_family}";
+          font_family = "${f.monospace}";
           position = "0, 10";
           halign = "center";
           valign = "center";

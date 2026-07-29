@@ -2,6 +2,7 @@
 
 let
   c = config.theme.colors;
+  f = config.theme.fonts;
 in
 {
   services.playerctld.enable = true;
@@ -105,7 +106,7 @@ in
 
     style = ''
       * {
-        font-family: "SpaceMono Nerd Font", monospace;
+        font-family: "${f.monospace}", monospace;
         font-size: 13px;
         font-weight: bold;
         border-radius: 5px;

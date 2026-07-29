@@ -1,15 +1,13 @@
 { lib, config, ... }:
 
 let
-  # Définition de ta palette unique
   palettes = {
     main = {
-      accent   = "#ff8a5c"; # 1. Tangerine Dream
-      bg       = "#141416"; # 2. Onyx
-      bg_alt   = "#39393b"; # 3. Graphite (secondary BG off)
-      fg_muted = "#3c3c3e"; # 4. Gunmetal (Texte muted)
-      fg       = "#c2c2c2"; # 5. Cool Steel (Texte)
-
+      accent   = "#ff8a5c";
+      bg       = "#141416";
+      bg_alt   = "#39393b";
+      fg_muted = "#3c3c3e";
+      fg       = "#c2c2c2";
       green    = "#5cff8d";
       yellow   = "#ffdc5c";
       blue     = "#5c82ff";
@@ -31,6 +29,19 @@ in
     colors = lib.mkOption {
       type = lib.types.attrs;
       description = "Resolved colors";
+    };
+
+    fonts = {
+      monospace = lib.mkOption {
+        type = lib.types.str;
+        default = "SpaceMono Nerd Font";
+        description = "Default monospace font";
+      };
+      sansSerif = lib.mkOption {
+        type = lib.types.str;
+        default = "Space Grotesk";
+        description = "Default sans-serif font";
+      };
     };
   };
 

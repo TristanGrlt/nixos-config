@@ -1,3 +1,25 @@
+## 0.4.0 (2026-07-29)
+
+### Feat
+
+- **bluetooth/stray**: add always on bluetooth applet in the stray
+- **waybar**: write a simple starting waybar
+- **style**: add the rest of style to what is here
+- **style**: wofi
+- **style**: add wallpaper and stylix
+
+### Fix
+
+- **style**: sway borders
+- **style**: main palette
+- **style**: sway
+- **style**: define base for color stylisation
+- return to a more stable state
+
+### Refactor
+
+- **waybar**: clean up config
+
 ## 0.3.0 (2026-07-26)
 
 ### Feat

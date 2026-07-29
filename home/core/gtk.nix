@@ -3,7 +3,6 @@
 let
   c = config.theme.colors;
   
-  # Le code CSS qui surcharge les couleurs internes de GTK
   customGtkCss = ''
     @define-color accent_color ${c.accent};
     @define-color accent_bg_color ${c.accent};
@@ -30,6 +29,7 @@ let
 in
 {
   home.pointerCursor = {
+    enable = true;
     name = "Bibata-Modern-Classic";
     package = pkgs.bibata-cursors;
     size = 24;
@@ -40,7 +40,6 @@ in
   gtk = {
     enable = true;
     theme = {
-      # adw-gtk3 reproduit l'apparence moderne de GNOME pour les vieilles apps GTK3
       name = "adw-gtk3-dark";
       package = pkgs.adw-gtk3;
     };
@@ -50,14 +49,12 @@ in
     };
   };
 
-  # On demande à Qt (KDE, VLC, etc.) de copier l'apparence de GTK
   qt = {
     enable = true;
     platformTheme.name = "gtk3";
     style.name = "adwaita-dark";
   };
 
-  # On injecte notre CSS dans les dossiers de configuration de GTK3 et GTK4
   xdg.configFile = {
     "gtk-3.0/gtk.css".text = customGtkCss;
     "gtk-4.0/gtk.css".text = customGtkCss;

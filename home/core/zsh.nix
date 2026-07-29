@@ -30,7 +30,7 @@ in
       cat = "bat";
     };
 
-    initExtra = ''
+    initContent = ''
       # Configuration for  completion engine
       zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 

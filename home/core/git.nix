@@ -4,7 +4,7 @@
   programs.git = {
     enable = true;
     
-    aliases = {
+    settings.alias = {
       st = "status";
       co = "checkout";
       sw = "switch";

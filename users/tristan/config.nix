@@ -50,7 +50,7 @@ in
 
   programs.ssh = {
     enable = true;
-    # La nouvelle méthode centralise tout dans 'settings'
+    enableDefaultConfig = false;
     settings = {
       "*" = {
         AddKeysToAgent = "yes";

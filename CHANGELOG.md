@@ -1,3 +1,15 @@
+## 0.5.0 (2026-07-30)
+
+### Feat
+
+- **lockscreen**: add conf for hyprlock
+- **wallpaper**: define theme option for per user wallpapers
+- **workspace**: waybar only show screen local workspace and keybind adapted for azerty layout
+
+### Fix
+
+- **warning**: all warning have been fixed
+
 ## 0.4.0 (2026-07-29)
 
 ### Feat

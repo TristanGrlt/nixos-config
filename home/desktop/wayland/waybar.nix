@@ -16,8 +16,8 @@ in
         height = 32;
         spacing = 0;
         margin-top = 4;
-        margin-left = 4;
-        margin-right = 4;
+        margin-left = 0;
+        margin-right = 0;
         
         modules-left = [
           "sway/workspaces"
@@ -41,16 +41,6 @@ in
           disable-scroll = true;
           all-outputs = true;
           format = "{name}";
-        };
-
-        "sway/window" = {
-          format = "{title}";
-          max-length = 50;
-          rewrite = {
-            "(.*) - Mozilla Firefox" = "  $1";
-            "(.*) - Alacritty" = "  $1";
-            "^$" = "󰇄 Desktop";
-          };
         };
 
         "cpu" = {
@@ -140,7 +130,6 @@ in
         color: ${c.fg};
       }
 
-      /* Container des Workspaces */
       #workspaces {
         margin: 4px;
         padding: 0;
@@ -164,7 +153,6 @@ in
         color: ${c.bg};
       }
 
-      /* Style commun pour tous les blocs */
       #window,
       #clock,
       #battery,
@@ -180,7 +168,6 @@ in
         margin: 4px 4px 4px 0;
       }
 
-      /* Exceptions et alertes */
       #network.disconnected,
       #pulseaudio.muted {
         color: ${c.accent};

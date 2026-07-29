@@ -59,6 +59,10 @@ in
         command = "systemctl --user restart kanshi.service"; 
         always = true; 
       }
+      {
+        command = "blueman-applet";
+        always = true;
+      }
     ];
 
     extraSessionCommands = ''

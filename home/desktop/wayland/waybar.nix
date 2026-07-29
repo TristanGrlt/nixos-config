@@ -14,7 +14,7 @@ in
         layer = "top";
         position = "bottom";
         height = 32;
-        spacing = 0;
+        spacing = 5;
         margin-top = 4;
         margin-left = 0;
         margin-right = 0;

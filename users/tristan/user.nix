@@ -9,5 +9,6 @@
     userEmail = "tristan.groult@gmail.com";
   };
   theme.name = "main";
+  theme.wallpaper = ../../wallpapers/anna-scarfiello-Pxf5syDVuxQ.jpg;
 
 }

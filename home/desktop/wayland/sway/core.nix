@@ -54,6 +54,13 @@ in
       };
     };
 
+    config.output = {
+      "*" = {
+        # Fetch wallpaper from the nix store
+        bg = "${config.theme.wallpaper} fill";
+      };
+    };
+
     config.startup = [
       { 
         command = "systemctl --user restart kanshi.service"; 

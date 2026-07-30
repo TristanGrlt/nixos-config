@@ -13,8 +13,8 @@ in
     config.terminal = "alacritty";
     
     config.gaps = {
-      inner = 8;
-      outer = 0;
+      inner = 4;
+      outer = 4;
     };
     
     config.window = {

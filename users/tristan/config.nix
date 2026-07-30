@@ -24,7 +24,8 @@ in
         size = lib.mkForce 11;
       };
       scrolling.multiplier = 5;
-      selection.save_to_clipboard = true;
+      selection.save_to_clipboard = false;
+      window.opacity = 0.95;
       colors = {
         primary = {
           background = c.bg;

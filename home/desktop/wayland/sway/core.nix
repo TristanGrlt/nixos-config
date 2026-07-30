@@ -6,7 +6,9 @@ in
 {
   wayland.windowManager.sway = {
     enable = true;
-    
+    package = pkgs.swayfx;
+    checkConfig = false;
+
     config.modifier = "Mod4";
     config.terminal = "alacritty";
     
@@ -76,6 +78,13 @@ in
       export MOZ_ENABLE_WAYLAND=1
       export XDG_SESSION_TYPE=wayland
       export XDG_CURRENT_DESKTOP=sway
+    '';
+
+    extraConfig = ''
+      corner_radius 4 
+      blur enable
+      blur_radius 5
+      shadows enable
     '';
   };
 }

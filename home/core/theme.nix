@@ -3,7 +3,7 @@
 let
   palettes = {
     main = {
-      accent   = "#ff8a5c";
+      accent   = "#d76133";
       bg       = "#141416";
       bg_alt   = "#39393b";
       fg_muted = "#3c3c3e";

@@ -11,7 +11,7 @@ in
     config.terminal = "alacritty";
     
     config.gaps = {
-      inner = 0;
+      inner = 8;
       outer = 0;
     };
     

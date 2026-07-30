@@ -27,11 +27,11 @@ in
 
     config.colors = {
       focused = {
-        background = "${c.accent}";
+        background = "${c.bg_alt}";
         border = "${c.bg}";
-        childBorder = "${c.accent}";
+        childBorder = "${c.bg_alt}";
         indicator = "${c.bg_alt}";
-        text = "${c.bg}";
+        text = "${c.fg}";
       };
       focusedInactive = {
         background = "${c.bg_alt}";

@@ -47,5 +47,8 @@
      "Mod4+Shift+underscore" = "move container to workspace number 8";
      "Mod4+Shift+ccedilla" = "move container to workspace number 9";
      "Mod4+Shift+agrave" = "move container to workspace number 10";
+
+     # Toggle SwayNC control center
+     "Mod4+Shift+n" = "exec swaync-client -t -sw";
   };
 }

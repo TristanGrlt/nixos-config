@@ -38,6 +38,10 @@
           hostname = "lap-greycanyon";
           username = "tristan";
         };
+        lap-grassfiels = mkSystem {
+          hostname = "lap-grassfields";
+          username = "tristan";
+        };
       };
     };
 }

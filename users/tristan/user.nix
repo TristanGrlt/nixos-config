@@ -6,8 +6,8 @@
   
   programs.git = {
     settings.user = {
-      userName = "TristanGrlt";
-      userEmail = "tristan.groult@gmail.com";
+      name = "TristanGrlt";
+      email = "tristan.groult@gmail.com";
     };
   };
   theme.name = "main";

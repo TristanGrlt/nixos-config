@@ -27,6 +27,7 @@
           modules = [
             ./hosts/${hostname}/configuration.nix
 
+            disko.nixosModules.disko
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;

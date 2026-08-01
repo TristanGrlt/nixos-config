@@ -43,7 +43,7 @@
           hostname = "lap-greycanyon";
           username = "tristan";
         };
-        lap-grassfiels = mkSystem {
+        lap-grassfields = mkSystem {
           hostname = "lap-grassfields";
           username = "tristan";
         };

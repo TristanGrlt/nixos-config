@@ -6,8 +6,12 @@
     
     home-manager = {
       url = "github:nix-community/home-manager";
-      # Force home-manger to use the same nixpkgs as the systeme
       inputs.nixpkgs.follows = "nixpkgs"; 
+    };
+
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
   };

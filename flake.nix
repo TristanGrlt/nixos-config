@@ -16,7 +16,7 @@
 
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, disko, ... }:
     let
       mylib = import ./lib { inherit (nixpkgs) lib; };
       mkSystem = { hostname, username }:

@@ -32,8 +32,9 @@ in
           monitor = "";
           size = "300, 50";
 
-          # Force square borders and password dots
-          rounding = 1;
+          outline_thickness = 0;
+
+          rounding = 5;
           dots_rounding = 0;
 
           dots_size = 0.30;

@@ -8,6 +8,21 @@ let
   hex = color: "rgb(" + builtins.substring 1 6 color + ")";
 in
 {
+  services.swayidle = {
+    enable = true;
+
+    events = {
+      before-sleep = "${pkgs.hyprlock}/bin/hyprlock";
+      lock = "${pkgs.hyprlock}/bin/hyprlock";
+    };
+
+    timeouts = [
+      {
+        timeout = 300; # 5 mins
+        command = "${pkgs.hyprlock}/bin/hyprlock";
+      }
+    ];
+  };
   programs.hyprlock = {
     enable = true;
 

@@ -20,5 +20,5 @@
 
   security.polkit.enable = true;
   # Authorise swaylock to verify password 
-  security.pam.services.swaylock = {};
+  security.pam.services.hyprlock = {};
 }

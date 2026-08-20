@@ -105,6 +105,11 @@
       enable = true;
     };
 
+    # Which-key
+    plugins.which-key = {
+      enable = true;
+    };
+
     # Keybinds
     keymaps = [
       {

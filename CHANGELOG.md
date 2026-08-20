@@ -1,20 +1,3 @@
-## 0.6.0 (2026-07-31)
-
-### Feat
-
-- **swaync**: add more options to swaync
-- **swayfx**: add config for swayfx
-- **sway**: add small gaps between windows
-- **waybar**: set explicit no margin on bar
-
-### Fix
-
-- **sway**: fix gap for windows
-
-### Refactor
-
-- **font**: make default and monospace font configurable along side other theme configuration
-
 ## 0.5.0 (2026-07-30)
 
 ### Feat

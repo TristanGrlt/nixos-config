@@ -43,6 +43,58 @@
       enable = true;
     };
 
+    # Finder
+    plugins.telescope = {
+      enable = true;
+      keymaps = {
+        "<leader>ff" = {
+          action = "find_files";
+          options.desc = "Find Files";
+        };
+        "<leader>fg" = {
+          action = "live_grep";
+          options.desc = "Live Grep";
+        };
+        "<leader>fb" = {
+          action = "buffers";
+          options.desc = "Find Buffers";
+        };
+      };
+    };
+
+    # LSP
+    plugins.lsp = {
+      enable = true;
+      servers = {
+        clangd.enable = true;
+        ts_ls.enable = true;
+        pyright.enable = true;
+        nil_ls.enable = true;
+      };
+      keymaps.lspBuf = {
+        "gd" = "definition";
+        "K" = "hover";
+      };
+    };
+
+    # Autocomplete
+    plugins.cmp = {
+      enable = true;
+      autoEnableSources = true;
+      settings = {
+        sources = [
+          { name = "nvim_lsp"; }
+          { name = "buffer"; }
+          { name = "path"; }
+        ];
+        mapping = {
+          "<CR>" = "cmp.mapping.confirm({ select = true })";
+          "<Tab>" = "cmp.mapping.select_next_item()";
+          "<S-Tab>" = "cmp.mapping.select_prev_item()";
+        };
+      };
+    };
+
     # Keybinds
     keymaps = [
       {

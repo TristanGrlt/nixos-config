@@ -100,6 +100,11 @@
       enable = true;
     };
 
+    # Lualine
+    plugins.lualine = {
+      enable = true;
+    };
+
     # Keybinds
     keymaps = [
       {

@@ -14,9 +14,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixvim = {
+      url = "github:nix-community/nixvim";
+    };
+
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, disko, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, disko, nixvim, ... }:
     let
       mylib = import ./lib { inherit (nixpkgs) lib; };
       mkSystem = { hostname, username }:
@@ -33,6 +37,8 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = { inherit inputs username mylib; };
+              home-manager.sharedModules = [ nixvim.homeModules.nixvim ];
+
               home-manager.users.${username} = import ./users/${username}/default.nix;
             }
           ];

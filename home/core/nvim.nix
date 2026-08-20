@@ -1,59 +1,59 @@
 { pkgs, ... }:
 
 {
-  programs.neovim = {
+  programs.nixvim = {
     enable = true;
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
-    
-    
 
-    plugins = with pkgs.vimPlugins; [
-      tokyonight-nvim
-      nvim-treesitter.withAllGrammars
+    # Leader
+    globals = {
+      mapleader = " ";
+      maplocalleader = " ";
+    };
+
+    # Base
+    opts = {
+      number = true;
+      cursorline = true;
+      termguicolors = true;
+      background = "dark";
+      tabstop = 2;
+      shiftwidth = 2;
+      expandtab = true;
+      smartindent = true;
+      ignorecase = true;
+      smartcase = true;
+    };
+
+    # Theme
+    colorschemes.tokyonight.enable = true;
+
+    # Treesitter
+    plugins.treesitter = {
+      enable = true;
+      settings = {
+        highlight.enable = true;
+      };
+    };
+
+    # Keybinds
+    keymaps = [
+      {
+        mode = "n";
+        key = "<leader>th";
+        options.desc = "Toggle Theme";
+        action.__raw = ''
+          function()
+            if vim.o.background == "dark" then
+              vim.o.background = "light"
+            else
+              vim.o.background = "dark"
+            end
+          end
+        '';
+      }
     ];
-
-    extraLuaConfig = ''
-      -- Leader
-      vim.g.mapleader = " "
-      vim.g.maplocalleader = " "
-
-      -- Keybinds
-      vim.keymap.set("n", "<leader>th", function()
-        if vim.o.background == "dark" then
-          vim.o.background = "light"
-        else
-          vim.o.background = "dark"
-        end
-      end, { desc = "Toggle Theme" })
-
-      -- Base
-      vim.opt.number = true
-      vim.opt.cursorline = true
-      vim.opt.termguicolors = true
-      vim.opt.background = "dark"
-
-      vim.opt.tabstop = 2
-      vim.opt.shiftwidth = 2
-      vim.opt.expandtab = true
-      vim.opt.smartindent = true
-
-      vim.opt.ignorecase = true
-      vim.opt.smartcase = true
-
-      -- Theme
-      vim.cmd([[colorscheme tokyonight]])
-
-      -- Treesitter
-      local status_ok, ts_configs = pcall(require, "nvim-treesitter.configs")
-      if status_ok then
-        ts_configs.setup({
-          ensure_installed = { "c", "java", "python", "typescript", "lua", "vim", "vimdoc" },
-          highlight = { enable = true },
-          auto_install = true,
-        })
-      end
-    '';
   };
 }

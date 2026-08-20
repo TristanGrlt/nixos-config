@@ -88,6 +88,8 @@ in
 
       # togle on and off the screen even in lock mode
       bindsym --locked Mod4+Shift+p exec swaymsg output '*' dpms $(swaymsg -t get_outputs | jq -r '.[0].dpms | if . then "off" else "on" end')
+      # force flameshot to be floating
+      for_window [title="flameshot"] floating enable, border none
     '';
   };
 }

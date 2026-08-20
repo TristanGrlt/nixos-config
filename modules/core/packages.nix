@@ -2,7 +2,6 @@
 
 {
   environment.systemPackages = with pkgs; [
-    vim
     git
     wget
     tmux
@@ -54,5 +53,4 @@
     glow	# CLI md renderer
   ];
   
-  environment.variables.EDITOR = "vim";
 }

@@ -110,6 +110,15 @@
       enable = true;
     };
 
+    # Terminal
+    plugins.toggleterm = {
+      enable = true;
+      settings = {
+        direction = "float";
+        open_mapping = "[[<C-t>]]";
+      };
+    };
+
     # Keybinds
     keymaps = [
       {

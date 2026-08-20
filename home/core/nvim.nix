@@ -95,6 +95,11 @@
       };
     };
 
+    # Git
+    plugins.gitsigns = {
+      enable = true;
+    };
+
     # Keybinds
     keymaps = [
       {

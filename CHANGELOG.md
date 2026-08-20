@@ -1,3 +1,38 @@
+## 0.6.0 (2026-08-20)
+
+### Feat
+
+- **nvim**: add LSP and autocomplete
+- **nvim**: add the neo-tree explorer
+- **nvim**: add base config for nvim
+- **wl-copy**: add wl-copy and clipboard history visible throught wofi
+- **screeshot**: add flameshot to be able to make screenshot
+- **overview**: add an overview for sway trigered by holding mod+tab
+- **lock**: auto lock activation and keybind to turn off screens
+- **transmission**: add torrent clieny*t
+- **host**: added a new host lap-grassfields
+- **pkgs**: add disko for reproductible disk configuration
+- **host**: add a new host config
+- **swaync**: add more options to swaync
+- **swayfx**: add config for swayfx
+- **sway**: add small gaps between windows
+- **waybar**: set explicit no margin on bar
+
+### Fix
+
+- **lock**: add pam right to hyprlock
+- **lock**: fix border
+- **app**: add crackng
+- **host**: fix missspeled host and update flake disko
+- **disko**: add mising attribut
+- **disko**: add missing nixosModules disko
+- **sway**: fix gap for windows
+
+### Refactor
+
+- **nvim**: use nixvim instead of hand made nvim config
+- **font**: make default and monospace font configurable along side other theme configuration
+
 ## 0.5.0 (2026-07-30)
 
 ### Feat

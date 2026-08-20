@@ -119,6 +119,24 @@
       };
     };
 
+    # Format
+    plugins.conform-nvim = {
+      enable = true;
+      settings = {
+        format_on_save = {
+          lsp_fallback = true;
+          timeout_ms = 500;
+        };
+        formatters_by_ft = {
+          c = [ "clang-format" ];
+          java = [ "google-java-format" ];
+          python = [ "black" ];
+          typescript = [ "prettier" ];
+          javascript = [ "prettier" ];
+        };
+      };
+    };
+
     # Keybinds
     keymaps = [
       {

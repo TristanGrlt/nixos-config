@@ -38,6 +38,11 @@
       };
     };
 
+    # Explorer
+    plugins.neo-tree = {
+      enable = true;
+    };
+
     # Keybinds
     keymaps = [
       {
@@ -53,6 +58,12 @@
             end
           end
         '';
+      }
+      {
+        mode = "n";
+        key = "<leader>e";
+        options.desc = "Toggle Explorer";
+        action = "<cmd>Neotree toggle<CR>";
       }
     ];
   };

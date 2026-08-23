@@ -1,5 +1,5 @@
 { mylib, ... }:
 
 {
-  imports = mylib.scanPaths ./. false;
+  imports = mylib.scanPaths ./. true;
 }

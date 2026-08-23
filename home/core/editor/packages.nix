@@ -5,6 +5,6 @@
     clang-tools
     google-java-format
     black
-    nodePackages.prettier
+    prettier
   ];
 }

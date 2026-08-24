@@ -3,10 +3,12 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    
+
+    nur.url = "github:nix-community/NUR";
+
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs"; 
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     disko = {
@@ -20,13 +22,30 @@
 
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, disko, nixvim, ... }:
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      nur,
+      home-manager,
+      disko,
+      nixvim,
+      ...
+    }:
     let
       mylib = import ./lib { inherit (nixpkgs) lib; };
-      mkSystem = { hostname, username }:
+      mkSystem =
+        { hostname, username }:
         nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          specialArgs = { inherit inputs hostname username mylib; };
+          specialArgs = {
+            inherit
+              inputs
+              hostname
+              username
+              mylib
+              ;
+          };
 
           modules = [
             ./hosts/${hostname}/configuration.nix
@@ -34,16 +53,20 @@
             disko.nixosModules.disko
             home-manager.nixosModules.home-manager
             {
+              nixpkgs.overlays = [ nur.overlays.default ];
+
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = { inherit inputs username mylib; };
               home-manager.sharedModules = [ nixvim.homeModules.nixvim ];
+              home-manager.backupFileExtension = "backup";
 
               home-manager.users.${username} = import ./users/${username}/default.nix;
             }
           ];
         };
-    in {
+    in
+    {
       nixosConfigurations = {
         lap-greycanyon = mkSystem {
           hostname = "lap-greycanyon";

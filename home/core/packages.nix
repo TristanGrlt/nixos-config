@@ -10,5 +10,14 @@
   home.packages = with pkgs; [
     transmission_4-gtk
     aircrack-ng
+
+    gnome-calculator
+    gnome-calendar
+    snapshot
+    baobab
+    gnome-disk-utility
+    simple-scan
+    evince
+    loupe
   ];
 }

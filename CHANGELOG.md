@@ -1,3 +1,21 @@
+## 0.7.0 (2026-08-25)
+
+### Feat
+
+- **wayland**: migrate from wofi to rofi and add GNOME apps
+- **browser**: add brave-origin browser
+- **firefox**: add firefox with a full nix declarative config
+- **explorer**: switch file explorer from nnn to superfile
+- **nvim**: add formating for multiple language
+- **nvim**: add toglable floating term
+- **nvim**: add Which-key
+- **nvim**: add lualine
+- **nvim**: add gitsigns
+
+### Fix
+
+- **nvim**: fix include and package name for auto format
+
 ## 0.6.0 (2026-08-20)
 
 ### Feat

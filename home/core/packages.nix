@@ -1,7 +1,12 @@
-{ config, pkgs, ... }:
-
+{ pkgs, ... }:
 {
   programs.mpv.enable = true;
+
+  programs.chromium = {
+    enable = true;
+    package = pkgs.brave-origin;
+  };
+
   home.packages = with pkgs; [
     transmission_4-gtk
     aircrack-ng

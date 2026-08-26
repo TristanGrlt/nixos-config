@@ -80,6 +80,16 @@
         ublock-origin
         bitwarden
         darkreader
+        betterttv
+        enhancer-for-youtube
+        return-youtube-dislikes
+        sponsorblock
+        videospeed
+        behind-the-overlay-revival
+        imagus
+        youtube-no-translation
+        purpleadblock
+        multi-account-containers
       ];
     };
   };

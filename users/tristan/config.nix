@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
   c = config.theme.colors;
@@ -19,6 +24,13 @@ in
     enable = true;
     settings = {
       env.TERM = "xterm-256color";
+      keyboard.bindings = [
+        {
+          key = "Return";
+          mods = "Control|Shift";
+          action = "SpawnNewInstance";
+        }
+      ];
       font = {
         normal.family = lib.mkForce f.monospace;
         size = lib.mkForce 11;
@@ -32,14 +44,14 @@ in
           foreground = c.fg;
         };
         normal = {
-          black   = c.bg_alt;
-          red     = c.red;
-          green   = c.green;
-          yellow  = c.yellow;
-          blue    = c.blue;
+          black = c.bg_alt;
+          red = c.red;
+          green = c.green;
+          yellow = c.yellow;
+          blue = c.blue;
           magenta = c.magenta;
-          cyan    = c.cyan;
-          white   = c.white;
+          cyan = c.cyan;
+          white = c.white;
         };
       };
     };

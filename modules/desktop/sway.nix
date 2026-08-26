@@ -19,6 +19,10 @@
   };
 
   security.polkit.enable = true;
-  # Authorise swaylock to verify password 
-  security.pam.services.hyprlock = {};
+  # Authorise swaylock to verify password
+  security.pam.services.hyprlock = { };
+
+  # USB & Trash
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
 }

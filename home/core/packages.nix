@@ -19,6 +19,9 @@
     simple-scan
     evince
     loupe
-    nautilus
+
+    thunar
+    thunar-volman
+    thunar-archive-plugin
   ];
 }

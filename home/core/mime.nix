@@ -1,22 +1,34 @@
-{ ... }:
+{ pkgs, ... }:
+
+let
+  images = [ "org.gnome.loupe.desktop" ];
+  texte = [ "nvim.desktop" ];
+  pdf = [ "org.gnome.Evince.desktop" ];
+  dossier = [ "thunar.desktop" ];
+
+  mimeMap = {
+    "inode/directory" = dossier;
+
+    "text/plain" = texte;
+    "text/markdown" = texte;
+    "text/csv" = texte;
+
+    "image/png" = images;
+    "image/jpeg" = images;
+    "image/jpg" = images;
+    "image/gif" = images;
+    "image/svg+xml" = images;
+    "image/webp" = images;
+
+    "application/pdf" = pdf;
+  };
+in
 {
+  home.packages = [ pkgs.xdg-utils ];
+
   xdg.mimeApps = {
     enable = true;
-    defaultApplications = {
-      # Texte
-      "text/plain" = [ "nvim.desktop" ];
-      "text/markdown" = [ "nvim.desktop" ];
-      "text/csv" = [ "nvim.desktop" ];
-
-      # Images
-      "image/png" = [ "org.gnome.loupe.desktop" ];
-      "image/jpeg" = [ "org.gnome.loupe.desktop" ];
-      "image/gif" = [ "org.gnome.loupe.desktop" ];
-      "image/svg+xml" = [ "org.gnome.loupe.desktop" ];
-      "image/webp" = [ "org.gnome.loupe.desktop" ];
-
-      # PDF
-      "application/pdf" = [ "org.gnome.Evince.desktop" ];
-    };
+    defaultApplications = mimeMap;
+    associations.added = mimeMap;
   };
 }

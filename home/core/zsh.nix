@@ -7,17 +7,21 @@ in
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    
+
     # Grey auto-completion
     autosuggestion.enable = true;
-    
+
     # Color the commande ligne
     syntaxHighlighting.enable = true;
 
     # Plugins Oh-My-Zsh
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "docker" "kubectl" ];
+      plugins = [
+        "git"
+        "docker"
+        "kubectl"
+      ];
     };
 
     shellAliases = {
@@ -25,9 +29,8 @@ in
       ls = "eza --icons --group-directories-first";
       ll = "eza -l --icons --git --group-directories-first";
       la = "eza -la --icons --git --group-directories-first";
-      
-      # Replace cat for bat
-      cat = "bat";
+
+      spf = "superfile";
     };
 
     initContent = ''

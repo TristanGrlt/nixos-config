@@ -19,5 +19,6 @@
     simple-scan
     evince
     loupe
+    nautilus
   ];
 }

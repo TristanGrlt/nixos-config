@@ -8,6 +8,7 @@
     "Mod4+Shift+q" = "kill";
     "Mod4+Shift+c" = "reload";
     "Mod4+Mod1+l" = "exec hyprlock";
+    "Mod4+Shift+e" = "exec rofi-menus power";
 
     # Media control
     "XF86AudioPlay" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";

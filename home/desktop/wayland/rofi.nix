@@ -10,10 +10,11 @@ let
         exec ${pkgs.rofi-bluetooth}/bin/rofi-bluetooth
         ;;
       power)
-        action=$(echo -e "Lock\nSuspend\nReboot\nShutdown" | ${pkgs.rofi}/bin/rofi -dmenu -i -p "Power")
+        action=$(echo -e "Lock\nSuspend\nLog Out\nReboot\nShutdown" | ${pkgs.rofi}/bin/rofi -dmenu -i -p "Power")
         case "$action" in
           Lock) exec hyprlock ;;
           Suspend) exec systemctl suspend ;;
+          "Log Out") exec swaymsg exit ;;
           Reboot) exec systemctl reboot ;;
           Shutdown) exec systemctl poweroff ;;
         esac

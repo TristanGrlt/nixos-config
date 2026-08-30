@@ -1,4 +1,10 @@
-{ config, pkgs, hostname, username, ... }:
+{
+  config,
+  pkgs,
+  hostname,
+  username,
+  ...
+}:
 
 {
   imports = [
@@ -8,6 +14,12 @@
     ../../modules/core/default.nix
     ../../modules/desktop/default.nix
   ];
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 14d";
+  };
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -21,7 +33,11 @@
   users.users."${username}" = {
     isNormalUser = true;
     description = "${username}";
-    extraGroups = [ "networkmanager" "wheel" "video" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "video"
+    ];
     shell = pkgs.zsh;
   };
 

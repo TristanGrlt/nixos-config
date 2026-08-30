@@ -12,7 +12,6 @@
     aircrack-ng
 
     gnome-calculator
-    gnome-calendar
     snapshot
     baobab
     gnome-disk-utility
@@ -20,6 +19,7 @@
     evince
     loupe
 
+    pantheon.elementary-calendar
     thunar
     thunar-volman
     thunar-archive-plugin

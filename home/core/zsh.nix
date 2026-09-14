@@ -34,6 +34,8 @@ in
     };
 
     initContent = ''
+      export GPG_TTY=$(tty)
+
       # Configuration for  completion engine
       zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 

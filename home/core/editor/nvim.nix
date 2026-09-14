@@ -133,6 +133,7 @@
           python = [ "black" ];
           typescript = [ "prettier" ];
           javascript = [ "prettier" ];
+          nix = [ "nixfmt" ];
         };
       };
     };

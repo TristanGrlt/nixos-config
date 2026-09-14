@@ -1,0 +1,7 @@
+keys:
+  - &tristan age1jhzqpnhehd690wst4xhqz6ld58wa3uc5w4rq9yeh69gc3jstkcwsncp6gm 
+creation_rules:
+  - path_regex: secrets/secrets.yaml$
+    key_groups:
+    - age:
+      - *tristan

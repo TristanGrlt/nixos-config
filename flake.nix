@@ -20,6 +20,10 @@
       url = "github:nix-community/nixvim";
     };
 
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+    };
+
   };
 
   outputs =
@@ -30,6 +34,7 @@
       home-manager,
       disko,
       nixvim,
+      sops-nix,
       ...
     }:
     let
@@ -51,6 +56,7 @@
             ./hosts/${hostname}/configuration.nix
 
             disko.nixosModules.disko
+            sops-nix.nixosModules.sops
             home-manager.nixosModules.home-manager
             {
               nixpkgs.overlays = [ nur.overlays.default ];
@@ -58,7 +64,10 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = { inherit inputs username mylib; };
-              home-manager.sharedModules = [ nixvim.homeModules.nixvim ];
+              home-manager.sharedModules = [
+                nixvim.homeModules.nixvim
+                sops-nix.homeManagerModules.sops
+              ];
               home-manager.backupFileExtension = "backup";
 
               home-manager.users.${username} = import ./users/${username}/default.nix;

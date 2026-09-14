@@ -6,6 +6,6 @@
     google-java-format
     black
     prettier
-    nixfmt-rfc-style
+    nixfmt
   ];
 }

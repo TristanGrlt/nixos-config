@@ -1,8 +1,8 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 
 {
   sops = {
-    age.sshKeyPaths = [ "${config.home.homeDirectory}/.config/sops/age/keys.txt" ];
+    age.keyFile = "${config.home.homeDirectory}/.config/sops/age/keys.txt";
     defaultSopsFile = ../../secrets/secrets.yaml;
     secrets."emails/university_pwd" = { };
   };

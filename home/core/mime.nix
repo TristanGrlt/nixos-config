@@ -5,6 +5,7 @@ let
   texte = [ "nvim.desktop" ];
   pdf = [ "org.gnome.Evince.desktop" ];
   dossier = [ "thunar.desktop" ];
+  browser = [ "firefox.desktop" ];
 
   mimeMap = {
     "inode/directory" = dossier;
@@ -19,6 +20,12 @@ let
     "image/gif" = images;
     "image/svg+xml" = images;
     "image/webp" = images;
+
+    "text/html" = browser;
+    "x-scheme-handler/http" = browser;
+    "x-scheme-handler/https" = browser;
+    "x-scheme-handler/about" = browser;
+    "x-scheme-handler/unknown" = browser;
 
     "application/pdf" = pdf;
   };

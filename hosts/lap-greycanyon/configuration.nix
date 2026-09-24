@@ -1,4 +1,10 @@
-{ config, pkgs, hostname, username, ... }:
+{
+  config,
+  pkgs,
+  hostname,
+  username,
+  ...
+}:
 
 {
   imports = [
@@ -16,10 +22,16 @@
 
   programs.zsh.enable = true;
 
+  services.ollama.enable = true;
+
   users.users."${username}" = {
     isNormalUser = true;
     description = "${username}";
-    extraGroups = [ "networkmanager" "wheel" "video" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "video"
+    ];
     shell = pkgs.zsh;
   };
 

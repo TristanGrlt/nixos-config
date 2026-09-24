@@ -62,6 +62,12 @@
       };
     };
 
+    diagnostic.settings = {
+      virtual_text = true;
+      signs = true;
+      underline = true;
+    };
+
     # LSP
     plugins.lsp = {
       enable = true;
@@ -159,6 +165,12 @@
         key = "<leader>e";
         options.desc = "Toggle Explorer";
         action = "<cmd>Neotree toggle<CR>";
+      }
+      {
+        mode = "n";
+        key = "<leader>d";
+        options.desc = "Line Diagnostics";
+        action.__raw = "vim.diagnostic.open_float";
       }
     ];
   };

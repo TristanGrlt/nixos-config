@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   programs.nixvim = {
@@ -83,15 +83,40 @@
       };
     };
 
+    plugins.friendly-snippets.enable = true;
+
     # Autocomplete
     plugins.cmp = {
       enable = true;
       autoEnableSources = true;
       settings = {
+        snippet.expand = ''
+          function(args)
+            require('luasnip').lsp_expand(args.body)
+          end
+        '';
         sources = [
-          { name = "nvim_lsp"; }
-          { name = "buffer"; }
-          { name = "path"; }
+          {
+            name = "nvim_lsp";
+            priority = 1000;
+          }
+          {
+            name = "nvim_lsp_signature_help";
+            priority = 1000;
+          }
+          {
+            name = "luasnip";
+            priority = 750;
+          }
+          {
+            name = "path";
+            priority = 500;
+          }
+          {
+            name = "buffer";
+            priority = 250;
+            keyword_length = 2;
+          }
         ];
         mapping = {
           "<CR>" = "cmp.mapping.confirm({ select = true })";
@@ -171,6 +196,16 @@
         key = "<leader>d";
         options.desc = "Line Diagnostics";
         action.__raw = "vim.diagnostic.open_float";
+      }
+      {
+        mode = "n";
+        key = "<leader>ta";
+        options.desc = "Toggle AI";
+        action.__raw = ''
+          function()
+            _G.ToggleAI()
+          end
+        '';
       }
     ];
   };

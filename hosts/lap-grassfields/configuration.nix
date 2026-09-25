@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   hostname,
   username,
@@ -10,6 +9,7 @@
   imports = [
     ./hardware-configuration.nix
     ./disko.nix
+    ./nvidia.nix
 
     ../../modules/core/default.nix
     ../../modules/desktop/default.nix

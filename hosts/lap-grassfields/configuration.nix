@@ -44,11 +44,6 @@
     shell = pkgs.zsh;
   };
 
-  services.ollama = {
-    enable = true;
-    package = pkgs.ollama-cuda;
-  };
-
   # support for dev tools
   programs.nix-ld.enable = true;
 

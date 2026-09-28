@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   imports = [
@@ -7,5 +7,6 @@
     ../../home/desktop/wayland/default.nix
     ../../home/desktop/wayland/sway/default.nix
     ../../home/games/default.nix
+    ../../home/univ/default.nix
   ];
 }

@@ -33,6 +33,11 @@
 
   programs.zsh.enable = true;
 
+  services.ollama = {
+    enable = true;
+    package = pkgs.ollama-cuda;
+  };
+
   users.users."${username}" = {
     isNormalUser = true;
     description = "${username}";

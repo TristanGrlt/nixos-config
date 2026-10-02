@@ -8,5 +8,6 @@
     ../../home/desktop/wayland/sway/default.nix
     ../../home/games/default.nix
     ../../home/univ/default.nix
+    ../../home/virtu/default.nix
   ];
 }

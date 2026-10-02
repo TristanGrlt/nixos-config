@@ -13,6 +13,7 @@
 
     ../../modules/core/default.nix
     ../../modules/desktop/default.nix
+    ../../modules/virtu/default.nix
   ];
 
   nix.gc = {

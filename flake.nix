@@ -64,8 +64,6 @@
             sops-nix.nixosModules.sops
             home-manager.nixosModules.home-manager
             {
-              nixpkgs.overlays = [ nur.overlays.default ];
-
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = { inherit inputs username mylib; };

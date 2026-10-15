@@ -1,12 +1,6 @@
 { config, ... }:
 
 {
-  sops = {
-    age.keyFile = "${config.home.homeDirectory}/.config/sops/age/keys.txt";
-    defaultSopsFile = ../../secrets/secrets.yaml;
-    secrets."emails/university_pwd" = { };
-  };
-
   programs.thunderbird = {
     enable = true;
     profiles.tristan = {
@@ -41,8 +35,6 @@
       realName = "Tristan";
       address = "tristan.groult@univ-rouen.fr";
       userName = "groultri";
-
-      passwordCommand = "cat ${config.sops.secrets."emails/university_pwd".path}";
 
       imap = {
         host = "imap.univ-rouen.fr";

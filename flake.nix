@@ -81,10 +81,6 @@
     in
     {
       nixosConfigurations = {
-        lap-greycanyon = mkSystem {
-          hostname = "lap-greycanyon";
-          username = "tristan";
-        };
         lap-grassfields = mkSystem {
           hostname = "lap-grassfields";
           system = "x86_64-linux";

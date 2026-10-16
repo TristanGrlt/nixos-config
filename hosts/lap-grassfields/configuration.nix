@@ -9,6 +9,7 @@
     ./hardware-configuration.nix
     ./disko.nix
     ./nvidia.nix
+    ./kanshi.nix
 
     ../../modules/core/default.nix
     ../../modules/desktop/default.nix

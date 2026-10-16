@@ -1,25 +1,10 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
+{ config, lib, ... }:
 
 let
   c = config.theme.colors;
   f = config.theme.fonts;
 in
 {
-  programs.starship = {
-    enable = true;
-    settings = {
-      add_newline = false;
-      aws.disabled = true;
-      gcloud.disabled = true;
-      line_break.disabled = true;
-    };
-  };
-
   programs.alacritty = {
     enable = true;
     settings = {
@@ -56,19 +41,4 @@ in
       };
     };
   };
-
-  programs.ssh = {
-    enable = true;
-    enableDefaultConfig = false;
-    settings = {
-      "*" = {
-        AddKeysToAgent = "yes";
-      };
-      "github.com" = {
-        IdentityFile = "~/.ssh/git_tristanGrlt";
-      };
-    };
-  };
-
-  home.stateVersion = "26.05";
 }

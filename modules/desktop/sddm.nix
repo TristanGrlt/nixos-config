@@ -1,17 +1,16 @@
 {
-  config,
   pkgs,
-  username,
   ...
 }:
 let
+  wallpaper = ../../wallpapers/anna-scarfiello-Pxf5syDVuxQ.jpg;
   blurredWallpaper =
     pkgs.runCommand "blurred-wallpaper.jpg"
       {
         nativeBuildInputs = [ pkgs.imagemagick ];
       }
       ''
-        magick ${config.home-manager.users.${username}.theme.wallpaper} -blur 0x24 $out
+        magick ${wallpaper} -blur 0x24 $out
       '';
 in
 {

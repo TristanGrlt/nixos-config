@@ -44,36 +44,37 @@
     }:
     let
       mylib = import ./lib { inherit (nixpkgs) lib; };
+
       mkSystem =
-        { hostname, username }:
+        {
+          hostname,
+          system ? "x86_64-linux",
+        }:
         nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+          inherit system;
           specialArgs = {
             inherit
               inputs
               hostname
-              username
               mylib
               ;
           };
-
           modules = [
             ./hosts/${hostname}/configuration.nix
 
             disko.nixosModules.disko
             sops-nix.nixosModules.sops
+
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { inherit inputs username mylib; };
+              home-manager.extraSpecialArgs = { inherit inputs mylib; };
               home-manager.sharedModules = [
                 nixvim.homeModules.nixvim
                 sops-nix.homeManagerModules.sops
               ];
               home-manager.backupFileExtension = "backup";
-
-              home-manager.users.${username} = import ./users/${username}/default.nix;
             }
           ];
         };
@@ -86,7 +87,7 @@
         };
         lap-grassfields = mkSystem {
           hostname = "lap-grassfields";
-          username = "tristan";
+          system = "x86_64-linux";
         };
       };
     };

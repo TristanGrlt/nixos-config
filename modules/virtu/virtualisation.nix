@@ -1,4 +1,4 @@
-{ pkgs, username, ... }:
+{ pkgs, ... }:
 
 {
   virtualisation.libvirtd = {
@@ -10,11 +10,6 @@
       vhostUserPackages = [ pkgs.virtiofsd ];
     };
   };
-
-  users.users.${username}.extraGroups = [
-    "libvirtd"
-    "kvm"
-  ];
 
   environment.systemPackages = with pkgs; [
     qemu

@@ -1,0 +1,91 @@
+{ config, pkgs, ... }:
+
+let
+  c = config.theme.colors;
+in
+{
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+
+    # Grey auto-completion
+    autosuggestion.enable = true;
+
+    # Color the commande ligne
+    syntaxHighlighting.enable = true;
+
+    # Plugins Oh-My-Zsh
+    oh-my-zsh = {
+      enable = true;
+      plugins = [
+        "git"
+        "docker"
+        "kubectl"
+      ];
+    };
+
+    shellAliases = {
+      # Remplace ls for eza
+      ls = "eza --icons --group-directories-first";
+      ll = "eza -l --icons --git --group-directories-first";
+      la = "eza -la --icons --git --group-directories-first";
+
+      spf = "superfile";
+    };
+
+    initContent = ''
+      export GPG_TTY=$(tty)
+      gpg-connect-agent updatestartuptty /bye > /dev/null 2>&1
+      unset SSH_ASKPASS
+
+      # Configuration for  completion engine
+      zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+
+      bindkey "^[[1;5C" forward-word
+      bindkey "^[[1;5D" backward-word
+      bindkey "^H" backward-kill-word # Ctrl+Backspace
+    '';
+  };
+
+  # Interactive fuzzy search (Ctrl+R / Ctrl+T)
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+    colors = {
+      bg = "${c.bg}";
+      "bg+" = "${c.bg_alt}";
+      fg = "${c.fg}";
+      "fg+" = "${c.fg}";
+      hl = "${c.accent}";
+      "hl+" = "${c.accent}";
+      info = "${c.yellow}";
+      marker = "${c.green}";
+      prompt = "${c.accent}";
+      spinner = "${c.blue}";
+      pointer = "${c.accent}";
+      header = "${c.magenta}";
+      border = "${c.bg_alt}";
+    };
+  };
+
+  # Inteligent cd
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  # ls replacement
+  programs.eza = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  # cat replacement
+  programs.bat = {
+    enable = true;
+  };
+
+  home.packages = with pkgs; [
+    zsh-completions
+  ];
+}

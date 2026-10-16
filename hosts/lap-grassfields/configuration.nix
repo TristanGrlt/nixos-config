@@ -1,7 +1,6 @@
 {
   pkgs,
   hostname,
-  username,
   ...
 }:
 
@@ -39,9 +38,11 @@
     package = pkgs.ollama-cuda;
   };
 
-  users.users."${username}" = {
+  ##############################################################################
+  # User tristan
+  ##############################################################################
+  users.users.tristan = {
     isNormalUser = true;
-    description = "${username}";
     extraGroups = [
       "networkmanager"
       "wheel"
@@ -49,6 +50,7 @@
     ];
     shell = pkgs.zsh;
   };
+  home-manager.users.tristan = import ../../users/tristan/desktop.nix;
 
   # support for dev tools
   programs.nix-ld.enable = true;

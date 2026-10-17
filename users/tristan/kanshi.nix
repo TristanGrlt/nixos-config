@@ -1,0 +1,46 @@
+{ lib, osConfig, ... }:
+
+let
+  host = osConfig.networking.hostName;
+in
+{
+  services.kanshi = {
+    enable = true;
+
+    settings = lib.mkMerge [
+      (lib.mkIf (host == "lap-grassfields") [
+        {
+          profile = {
+            name = "nomade";
+            outputs = [
+              {
+                criteria = "eDP-1";
+                status = "enable";
+                scale = 0.90;
+              }
+            ];
+          };
+        }
+        {
+          profile = {
+            name = "home";
+            outputs = [
+              {
+                criteria = "eDP-1";
+                position = "0,301";
+                scale = 0.90;
+              }
+              {
+                criteria = "Dell Inc. DELL U2424H HNJJL04";
+                status = "enable";
+                scale = 0.80;
+                position = "2137,154";
+                mode = "1920x1080@120Hz";
+              }
+            ];
+          };
+        }
+      ])
+    ];
+  };
+}

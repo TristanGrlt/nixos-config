@@ -9,6 +9,8 @@
     ../../home/games/default.nix
     ../../home/univ/default.nix
     ../../home/virtu/default.nix
+
+    ./kanshi.nix
   ];
 
   home.username = "tristan";

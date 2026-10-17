@@ -1,6 +1,6 @@
-{ ... }: {
+{ config, ... }: {
   sops = {
-    defaultSopsFile = ../../secrets/secrets.yaml;
-    age.keyFile = "/var/lib/sops-nix/keys.txt";
+    age.keyFile = "${config.home.homeDirectory}/.config/sops/age/keys.txt";
+    defaultSopsFile = ../../secrets/${config.home.username}.yaml;
   };
 }

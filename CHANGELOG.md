@@ -1,3 +1,63 @@
+## 0.8.0 (2026-10-17)
+
+### Feat
+
+- add an official documentation and a license
+- **sops**: make sops secret management per user and also global
+- **host**: removed lap-greycanyon that no longer exist
+- **shell**: move all shell realted thing to a dir of this name to clean up the home dir
+- **prompt**: move startship config to a file in home
+- **term**: move alacatry config to a file in home
+- **nixpkgs**: define nur as a global overlay
+- **flake**: syncronise all inputs with nixpkgs
+- add steam
+- **virtu**: add virtualisation support and CLI abd GUI for it
+- **db**: add configuration for univ database with host config and sops password
+- add oracle database tools for DB course
+- **kanshi**: set scale to .9 for my laptop screen at all time
+- add back ollama
+- remove ollama
+- add ollama
+- **gpu**: add nvidia config for the GPU
+- **nvim**: beter auto-completion
+- **lap-grassfield**: add ollama service
+- **nvim**: add beter errors indications
+- **mime**: make firefox the default and fix nvim as the default text editor
+- **vpn**: add the vpn off the dpi of the urn
+- **games**: add configuration folder for games and add minecraft launcher prism
+- **ssh**: add a pinetry pakage
+- **discord**: add vesktop with custom theme
+- **wifi**: config wifi networks in nix with sops
+- **ssh**: add ttl
+- **ssh**: add gpg agent for ssh cache ttl
+- **mail**: add thunderbird
+- **nvim**: add formater for nix that follow the rfc
+- **sops**: add sops for nix
+- **config**: add dev tools options for grassfields
+- use correct style for the greeting screen
+- . . pfff
+- **firefox**: add missing add-ons
+- **terminal**: add a keybind to open a new terminal window in the same path
+- **aliases**: remove cat by bat aliases and added spf for superfile aliases
+- **rofi**: add menus to do actions simplier
+
+### Fix
+
+- remove build warning
+- **lap-grassfield**: import kanshi
+- **email**: remove email password of sops because it is not working
+- **sov**: remove sov, it is not usefull at all
+- **ssh-agent**: set cache time to 2h and renamed file to match the content
+- **wifi**: make config persistent trought reboot
+- remove unused file
+- **editor**: use the right package to format nix code
+
+### Refactor
+
+- **kanshi**: kanshi config is now per user per host by checking the host name when building the system
+- **user**: now view users forlder as a collection of user situations thats can be imported for each host depending of what the user will do with the host
+- **explorer**: change from nautilus to thunar
+
 ## 0.7.0 (2026-08-25)
 
 ### Feat

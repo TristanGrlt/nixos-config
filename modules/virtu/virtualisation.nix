@@ -1,3 +1,10 @@
+################################################################################
+# Module:       Virtualisation
+# Description:  Enable libvirt virtualisation tools
+# In:           To use it, the user must be in the kvm and libvirtd group
+# Out:          quemu, libvirt and libvirtd enable on the host
+# Ref:          gui et cli tools availabe in the home directory
+################################################################################
 { pkgs, ... }:
 
 {

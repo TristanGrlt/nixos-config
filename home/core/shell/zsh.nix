@@ -34,9 +34,9 @@ in
     };
 
     initContent = ''
-      export GPG_TTY=$(tty)
-      gpg-connect-agent updatestartuptty /bye > /dev/null 2>&1
-      unset SSH_ASKPASS
+      # export GPG_TTY=$(tty)
+      # gpg-connect-agent updatestartuptty /bye > /dev/null 2>&1
+      # unset SSH_ASKPASS
 
       # Configuration for  completion engine
       zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'

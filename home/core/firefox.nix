@@ -73,6 +73,10 @@
 
         # Extra precaution for password manager
         "signon.rememberSignons" = false;
+
+        # Spell checking dictionaries
+        "layout.spellcheckDefault" = 1;
+        "spellchecker.dictionary" = "fr-moderne,en-US";
       };
 
       # Extensions

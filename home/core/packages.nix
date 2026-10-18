@@ -23,5 +23,10 @@
     thunar
     thunar-volman
     thunar-archive-plugin
+
+    # Spell checking dictionaries
+    hunspell
+    hunspellDicts.fr-moderne
+    hunspellDicts.en_US
   ];
 }

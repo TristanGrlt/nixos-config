@@ -84,6 +84,10 @@
           hostname = "lap-grassfields";
           system = "x86_64-linux";
         };
+        srv-constructor = mkSystem {
+          hostname = "srv-constructor";
+          system = "x86_64-linux";
+        };
       };
     };
 }

@@ -5,7 +5,6 @@
     ./hardware-configuration.nix
     ./disko.nix
 
-    ../../modules/server/k3s.nix
     ../../modules/core/default.nix
   ];
 
@@ -22,11 +21,6 @@
       PasswordAuthentication = false;
     };
   };
-
-  nix.settings.trusted-users = [
-    "root"
-    "@wheel"
-  ];
 
   ##############################################################################
   # User tristan

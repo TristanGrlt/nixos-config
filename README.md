@@ -47,6 +47,7 @@ Adding a new machine requires setting up its hardware profile, its disk layout, 
 ### 1. Hardware and Disk Configuration
 
 - Boot the new machine using a NixOS live USB.
+- (help) : you can switch the keyboard layout to French with `sudo loadkeys fr` and you can setup your connection with `nmtui`.
 
 #### Using SSH (Recomanded):
 

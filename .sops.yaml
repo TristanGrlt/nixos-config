@@ -1,6 +1,6 @@
 keys:
   - &tristan age1jhzqpnhehd690wst4xhqz6ld58wa3uc5w4rq9yeh69gc3jstkcwsncp6gm 
-  - &srv-constructor age1s7fl98s689yvzvfcnwf69n2qxrz8ttxjkrzmkt52cgqrz7xdvuvsrpmkrk 
+  - &srv-constructor age1dks0cttl3asljjkgnacr0mxq6jhwn869kfh6rrcfhnqtshag9s2q7e2huc
 creation_rules:
   - path_regex: secrets/tristan\.yaml$
     key_groups:

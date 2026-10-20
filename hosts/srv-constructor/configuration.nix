@@ -6,6 +6,7 @@
     ./disko.nix
 
     ../../modules/core/default.nix
+    ../../modules/server/k3s.nix
   ];
 
   boot.loader.systemd-boot.enable = true;

@@ -15,6 +15,7 @@
 
   networking.hostName = "srv-constructor";
   networking.networkmanager.enable = true;
+  hardware.enableRedistributableFirmware = true;
 
   services.openssh = {
     enable = true;

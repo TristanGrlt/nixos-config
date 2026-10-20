@@ -10,7 +10,7 @@
     config.sops.templates."nm-wifi.env".path
   ];
 
-  networking.networkmanager.wifi.macAddress = "random";
+  networking.networkmanager.wifi.macAddress = "permanent";
 
   networking.networkmanager.ensureProfiles.profiles = {
     #####

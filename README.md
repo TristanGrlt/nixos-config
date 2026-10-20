@@ -125,7 +125,7 @@ To allow the new host to decrypt system-level secrets (like WiFi/VPN passwords):
 Now that everything is configured, we can proced to the installation:
 
 ```bash
-nixos-install --flake .#<new-host>
+sudo nixos-install --flake .#<new-host>
 ```
 
 ## Adding a User

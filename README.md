@@ -52,18 +52,18 @@ Adding a new machine requires setting up its hardware profile, its disk layout, 
    git clone <repository-url> /etc/nixos-config
    cd /etc/nixos-config
    ```
-- Generate the hardware configuration:
+- Generate the hardware configuration and add it to git:
     ```bash
     nixos-generate-config --show-hardware-config > hosts/<new-host>/hardware-configuration.nix
     ```
-- Create a `disko.nix` file in `hosts/<new-host>/`. You can copy an existing one and adjust it
+- Create a `disko.nix` file in `hosts/<new-host>/` and add it to git. You can copy an existing one and adjust it
 
 ### 2. System Configuration
 
-- Create `hosts/<new-host>/configuration.nix`. You can copy an existing one and adjust it as follow
+- Create `hosts/<new-host>/configuration.nix` and add it to git. You can copy an existing one and adjust it as follow
 - Import the necessary modules (hardware, disko, core modules, ...).
 - Define the hostname, bootloader settings, and state version.
-- Declare the users that will exist on this machine and link their Home Manager profiles.
+- Declare the users that will exist on this machine and link their Home Manager profiles if needed.
 
 ### 3. Flake Integration
 
@@ -81,15 +81,15 @@ Adding a new machine requires setting up its hardware profile, its disk layout, 
 To allow the new host to decrypt system-level secrets (like WiFi/VPN passwords):
 
 - Retrieve the machine's public SSH ed25519 key (found in `/etc/ssh/ssh_host_ed25519_key.pub`).
-- Convert it to an age public key using `ssh-to-age`:
+- On an other machine, convert it to an age public key using `ssh-to-age`:
     ```bash
     ssh-keyscan <new-host-ip> | ssh-to-age
     ```
-- On a machine with a key already in `.sops.yaml` available at the root of the repository, add the new public key to the keys section.
+- Define in `.sops.yaml` available at the root of the repository, the new public key to the keys section.
 - Add the new key reference to the appropriate `creation_rules`.
 - Re-encrypt the existing system secrets to include the new host:
     ```bash
-    sops updatekeys secrets/shared.yaml
+    sops updatekeys secrets/<file>.yaml
     ```
 
 ## Adding a User

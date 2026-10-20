@@ -7,6 +7,7 @@
 
     ../../modules/core/default.nix
     ../../modules/server/k3s.nix
+    ../../modules/server/wifi.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -23,18 +24,27 @@
     };
   };
 
-  ##############################################################################
-  # User tristan
-  ##############################################################################
-  users.users.tristan = {
-    isNormalUser = true;
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-    ];
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDAKwYs0TA/UBPJqZCPAIcrRMJRx1DzWP6pQ02egkzaC tristan.groult@gmail.com"
-    ];
+  users.users = {
+    ##############################################################################
+    # User root
+    ##############################################################################
+    root = {
+      hashedPassword = "!";
+    };
+    ##############################################################################
+    # User tristan
+    ##############################################################################
+    tristan = {
+      isNormalUser = true;
+      hashedPassword = "!";
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+      ];
+      openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDAKwYs0TA/UBPJqZCPAIcrRMJRx1DzWP6pQ02egkzaC tristan.groult@gmail.com"
+      ];
+    };
   };
 
   system.stateVersion = "26.05";

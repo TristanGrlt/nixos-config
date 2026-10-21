@@ -82,6 +82,22 @@
         "type": "github"
       }
     },
+    "homelab": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1792699279,
+        "narHash": "sha256-zLnO+4R/+VbgRNAzpnP5nQMEiICax8uhcww/wJyTgwA=",
+        "owner": "TristanGrlt",
+        "repo": "homelab",
+        "rev": "c919e88d4520f4a85c01dc124cc61e0f8f3f0d3f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "TristanGrlt",
+        "repo": "homelab",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1787498568,
@@ -159,6 +175,7 @@
       "inputs": {
         "disko": "disko",
         "home-manager": "home-manager",
+        "homelab": "homelab",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
         "nur": "nur",

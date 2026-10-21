@@ -8,6 +8,7 @@
     ../../modules/core/default.nix
     ../../modules/server/k3s.nix
     ../../modules/server/wifi.nix
+    ../../modules/server/k3s-bootstrap.nix
   ];
 
   # Boot
@@ -40,6 +41,12 @@
       PermitRootLogin = "no";
       PasswordAuthentication = false;
     };
+  };
+
+  # k3s bootstrap
+  services.gitops-bootstrap = {
+    enable = true;
+    targetPath = "bootstrap";
   };
 
   # No sudo password

@@ -28,6 +28,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    homelab = {
+      url = "github:TristanGrlt/homelab";
+      flake = false;
+    };
+
   };
 
   outputs =
@@ -39,6 +44,7 @@
       disko,
       nixvim,
       sops-nix,
+      homelab,
       ...
     }:
     let

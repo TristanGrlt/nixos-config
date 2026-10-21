@@ -32,6 +32,9 @@
   };
 
   security.sudo.wheelNeedsPassword = false;
+  nix.settings.trusted-users = [
+    "@wheel"
+  ];
 
   users.users = {
     ##############################################################################

@@ -17,6 +17,8 @@ This repository contains a declarative, modular, and reproducible NixOS configur
     - [1. Generate User Secrets Infrastructure](#1-generate-user-secrets-infrastructure)
     - [2. Create the User Profile](#2-create-the-user-profile)
     - [3. Declare the User in the Host](#3-declare-the-user-in-the-host)
+- [Troubleshooting](#troubleshooting)
+    - [Recovery](#recovery)
 - [License](#license)
 
 ## Features
@@ -36,7 +38,7 @@ The repository is organized to strictly separate system configurations, user pro
 * `hosts/`: Contains machine-specific configurations. Each subdirectory represents a machine and includes its `hardware-configuration.nix`, `disko.nix`, and local `configuration.nix`.
 * `modules/`: Contains reusable NixOS system modules (e.g., core utilities, networking, desktop environment services). These affect the system globally.
 * `users/`: Contains user identities and their specific Home Manager profiles (e.g., `server.nix`, `desktop.nix`), including dynamic hardware-aware configurations.
-* `home/`: Contains reusable Home Manager modules (e.g., Fish/Zsh config, Neovim, Wayland compositors). These affect only the user environment.
+* `home/`: Contains reusable Home Manager modules (e.g., Zsh config, Neovim, Wayland compositors). These affect only the user environment.
 * `secrets/`: Contains encrypted files managed by SOPS, split into `shared.yaml`, and user-specific files.
 * `lib/`: Contains custom Nix helper functions (e.g., automatic path scanning).
 
@@ -68,7 +70,7 @@ Adding a new machine requires setting up its hardware profile, its disk layout, 
 
 #### Using SSH (Recomanded):
 
-Setting up the new machine in the tty can be annoying, the usage of ssh is recomanded. To do that, you can set your own public key in the ssh authorisedKeys (ex: cloud-init) or you can do it with a password using
+Setting up the new machine in the tty can be annoying, the usage of ssh is recomanded. To do that, you can set your own public key in the ssh authorisedKeys (e.g., cloud-init) or you can do it with a password using
 ```bash 
 passwd
 ```
@@ -191,6 +193,20 @@ sops secrets/<new-user>.yaml
     ```nix
     home-manager.users."<new-user>" = import ../../users/<new-user>/server.nix;
     ```
+
+## Troubleshooting
+
+### Recovery
+
+If you loose acces to the machine and booting on a previous version is not possible. You can enter a "Recovery Mode" by booting on live usb with a minimal nixos and mounting the system partitions and then enter the system to make the changement you need:
+
+```bash
+mount /dev/nvme0n1p1 /mnt
+mount /dev/nvme0n1p2 /mnt/boot # If the boot is on its own partition
+sudo nixos-enter
+# don't forget to exit and then un mount the partitions
+umount /mnt
+```
 
 ## License
 

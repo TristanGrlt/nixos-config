@@ -10,19 +10,23 @@
     ../../modules/server/wifi.nix
   ];
 
+  # Boot
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Diable lid and power saver
   services.logind.settings.Login = {
     HandleLidSwitch = "ignore";
     HandleLidSwitchExternalPower = "ignore";
     HandleLidSwitchDocked = "ignore";
   };
 
+  # Network
   networking.hostName = "srv-constructor";
   networking.networkmanager.enable = true;
   hardware.enableRedistributableFirmware = true;
 
+  # SSH
   services.openssh = {
     enable = true;
     settings = {
@@ -31,11 +35,15 @@
     };
   };
 
+  # No sudo password
   security.sudo.wheelNeedsPassword = false;
+
+  # Sudo trusted for the nix store
   nix.settings.trusted-users = [
     "@wheel"
   ];
 
+  # Users
   users.users = {
     ##############################################################################
     # User root

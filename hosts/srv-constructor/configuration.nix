@@ -15,6 +15,13 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Diable lid and power saver
+  systemd.targets.sleep.enable = false;
+  systemd.targets.suspend.enable = false;
+  systemd.targets.hibernate.enable = false;
+  systemd.targets.hybrid-sleep.enable = false;
+
+  networking.networkmanager.wifi.powersave = false;
+
   services.logind.settings.Login = {
     HandleLidSwitch = "ignore";
     HandleLidSwitchExternalPower = "ignore";

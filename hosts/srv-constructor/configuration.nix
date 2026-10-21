@@ -13,6 +13,12 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  services.logind.settings.Login = {
+    HandleLidSwitch = "ignore";
+    HandleLidSwitchExternalPower = "ignore";
+    HandleLidSwitchDocked = "ignore";
+  };
+
   networking.hostName = "srv-constructor";
   networking.networkmanager.enable = true;
   hardware.enableRedistributableFirmware = true;

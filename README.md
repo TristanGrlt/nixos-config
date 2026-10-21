@@ -11,7 +11,7 @@ This repository contains a declarative, modular, and reproducible NixOS configur
     - [1. Hardware and Disk Configuration](#1-hardware-and-disk-configuration) 
     - [2. System Configuration](#2-system-configuration)
     - [3. Flake Integration](#3-flake-integration)
-    - [4. System Secrets Management (SOPS)](#4-system-secrets-management-(sops))
+    - [4. System Secrets Management (SOPS)](#4-system-secrets-management-sops)
     - [5. Installing the System](#5-installing-the-system)
 - [Adding a User](#adding-a-user)
     - [1. Generate User Secrets Infrastructure](#1-generate-user-secrets-infrastructure)

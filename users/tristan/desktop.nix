@@ -9,6 +9,7 @@
     ../../home/games/default.nix
     ../../home/univ/default.nix
     ../../home/virtu/default.nix
+    ../../home/server/k3s.nix
 
     ./kanshi.nix
   ];

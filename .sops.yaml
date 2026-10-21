@@ -16,3 +16,7 @@ creation_rules:
     - age:
       - *tristan
       - *srv-constructor
+  - path_regex: secrets/kubeconfig.yaml
+    key_groups:
+      - age:
+          - *tristan

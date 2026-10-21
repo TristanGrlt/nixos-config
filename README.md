@@ -2,6 +2,23 @@
 
 This repository contains a declarative, modular, and reproducible NixOS configuration managed via Flakes. It is designed to scale across multiple machines (laptops, desktops, servers) and multiple users while maintaining a clean separation of concerns and strict security boundaries.
 
+## Summary
+
+- [Features](#features)
+- [Repository Structure](#repository-structure)
+- [Getting Started](#getting-started)
+- [Adding a New Host Manualy](#adding-a-new-host-manualy)
+    - [1. Hardware and Disk Configuration](#1-hardware-and-disk-configuration) 
+    - [2. System Configuration](#2-system-configuration)
+    - [3. Flake Integration](#3-flake-integration)
+    - [4. System Secrets Management (SOPS)](#4-system-secrets-management-(sops))
+    - [5. Installing the System](#5-installing-the-system)
+- [Adding a User](#adding-a-user)
+    - [1. Generate User Secrets Infrastructure](#1-generate-user-secrets-infrastructure)
+    - [2. Create the User Profile](#2-create-the-user-profile)
+    - [3. Declare the User in the Host](#3-declare-the-user-in-the-host)
+- [License](#license)
+
 ## Features
 
 * **Architecture** based on Nix Flakes for strict reproducibility.

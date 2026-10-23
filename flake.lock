@@ -85,11 +85,11 @@
     "homelab": {
       "flake": false,
       "locked": {
-        "lastModified": 1792699279,
-        "narHash": "sha256-zLnO+4R/+VbgRNAzpnP5nQMEiICax8uhcww/wJyTgwA=",
+        "lastModified": 1792764356,
+        "narHash": "sha256-EPbIPOGKaEhZKh/UE33BGMs2mqW1fcgFBs1ygLOpRKA=",
         "owner": "TristanGrlt",
         "repo": "homelab",
-        "rev": "c919e88d4520f4a85c01dc124cc61e0f8f3f0d3f",
+        "rev": "e3466d76d7180ba6f776adbc047bc9d08960b744",
         "type": "github"
       },
       "original": {

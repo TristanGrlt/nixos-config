@@ -5,6 +5,10 @@
     kubectl
     kubernetes-helm
     cmctl
+
+    # Usefull tools
+    sops
+    gnumake
   ];
 
   programs.zsh.shellAliases = {

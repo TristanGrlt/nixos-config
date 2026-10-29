@@ -32,6 +32,10 @@
   # Network
   networking.hostName = "srv-constructor";
   networking.networkmanager.enable = true;
+  networking.firewall.allowedTCPPorts = [
+    80
+    443
+  ];
   hardware.enableRedistributableFirmware = true;
 
   # SSH

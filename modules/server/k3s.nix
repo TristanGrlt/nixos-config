@@ -17,7 +17,6 @@
 
     extraFlags = toString [
       "--disable traefik"
-      "--disable servicelb"
       "--flannel-backend=wireguard-native"
     ];
   };

@@ -26,18 +26,35 @@
     settings = {
       "*" = {
         AddKeysToAgent = "yes";
-      };
-      "github.com" = {
         IdentityFile = "~/.ssh/git_tristanGrlt";
       };
     };
   };
 
   programs.git = {
-    settings.user = {
-      name = "TristanGrlt";
-      email = "tristan.groult@gmail.com";
+    settings = {
+      user = {
+        name = "TristanGrlt";
+        email = "tristan.groult@gmail.com";
+      };
+      gpg.format = "ssh";
+      commit.gpgsign = true;
     };
+    signing = {
+      key = "~/.ssh/git_tristanGrlt.pub";
+      signByDefault = true;
+    };
+    includes = [
+      {
+        condition = "hasconfig:remote.*.url:*gitlab-dpt-info-sciences.univ-rouen.fr*/**";
+        contents = {
+          user = {
+            name = "groultri";
+            email = "tristan.groult@univ-rouen.fr";
+          };
+        };
+      }
+    ];
   };
 
   home.stateVersion = "26.05";

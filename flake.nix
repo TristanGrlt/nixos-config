@@ -33,6 +33,11 @@
       flake = false;
     };
 
+    metrolist = {
+      url = "github:MetrolistGroup/Metrolist";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs =
@@ -45,6 +50,7 @@
       nixvim,
       sops-nix,
       homelab,
+      metrolist,
       ...
     }:
     let

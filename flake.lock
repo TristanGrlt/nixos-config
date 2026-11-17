@@ -98,6 +98,26 @@
         "type": "github"
       }
     },
+    "metrolist": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1794954251,
+        "narHash": "sha256-p2ga7qwTTZ96hvt32b6Pdrdkvr+wvcQ6Z0qxZ3to0Fo=",
+        "owner": "MetrolistGroup",
+        "repo": "Metrolist",
+        "rev": "553f189e4c318f5ddad27b52b05556c8fce78220",
+        "type": "github"
+      },
+      "original": {
+        "owner": "MetrolistGroup",
+        "repo": "Metrolist",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1787498568,
@@ -176,6 +196,7 @@
         "disko": "disko",
         "home-manager": "home-manager",
         "homelab": "homelab",
+        "metrolist": "metrolist",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
         "nur": "nur",

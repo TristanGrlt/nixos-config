@@ -5,6 +5,7 @@
   programs.sway = {
     enable = true;
     package = pkgs.swayfx;
+    extraOptions = [ "--unsupported-gpu" ];
   };
 
   hardware.graphics.enable = true;

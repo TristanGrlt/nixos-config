@@ -14,23 +14,40 @@
     ./kanshi.nix
   ];
 
+  ##############################################################################
+  # Home-manager configurtaion
+  ##############################################################################
   home.username = "tristan";
   home.homeDirectory = "/home/tristan";
 
+  ##############################################################################
+  # Custom theme configuration
+  ##############################################################################
   theme.name = "main";
   theme.wallpaper = ../../wallpapers/anna-scarfiello-Pxf5syDVuxQ.jpg;
+
+  ##############################################################################
+  # SSH & ssh-agent configuration
+  ##############################################################################
+  services.ssh-agent.enable = true;
+
+  home.sessionVariables.SSH_ASKPASS_REQUIRE = "never";
 
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
     settings = {
       "*" = {
-        AddKeysToAgent = "yes";
         IdentityFile = "~/.ssh/git_tristanGrlt";
+        IdentitiesOnly = true;
+        AddKeysToAgent = "2h";
       };
     };
   };
 
+  ##############################################################################
+  # Git configuration
+  ##############################################################################
   programs.git = {
     settings = {
       user = {
